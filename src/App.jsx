@@ -1,10 +1,19 @@
-import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Fixed import statement
+import Home from '../public/Home';
+import SignUp from '../public/SignUp';
+import Profile from '../public/Profile';
+import About from '../public/About';
 
 export default function App() {
   return (
-    <h1 className='text-red-500'>
-      app
-    </h1>
-  )
+    <Router> {/* Fixed component name from BrouserRouter to BrowserRouter */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<Profile />} /> {/* Fixed path for the Profile route */}
+      </Routes>
+    </Router>
+  );
 }
- 
